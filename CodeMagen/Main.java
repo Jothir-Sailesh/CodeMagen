@@ -63,7 +63,7 @@ class RentalAgreement {
         return "Agreement: " + tenant.getName() + " rents " + house.getId() + " from " + startDate + " to " + endDate;
     }
 }
-    class HouseNotFoundException extends Exception {  // 🔹 Place this first
+    class HouseNotFoundException extends Exception {
         public HouseNotFoundException(String message) {
             super(message);
         }
@@ -94,7 +94,7 @@ class HouseRentalManagementSystem {
 
         RentalAgreement agreement = new RentalAgreement(house, tenant, LocalDate.now(), LocalDate.now().plusMonths(12), house.getPrice() * 2);
 
-        // Save agreement to file
+        
         saveAgreementToFile("agreements.txt", agreement.toString());
 
         System.out.println("Booking successful! " + agreement);
